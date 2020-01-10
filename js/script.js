@@ -71,6 +71,9 @@ function errorImagen(imagen){
 function mostrarDescripcion(datos){
     $("#imagenPelicula, #tituloPelicula, .list-group-item").empty();
     let imagen = $("<img>");
+    $(imagen).on("error",()=>{
+        $(imagen).attr("src", "./images/noimage.png");
+    });
     $(imagen).attr("src",datos.Poster);
     $("#duracion").append("<b>Duración: </b>"+datos.Runtime);
     $("#genero").append("<b>Género: </b>"+datos.Genre);
