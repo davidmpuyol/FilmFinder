@@ -25,8 +25,8 @@ $(document).ready(()=>{
     });
 });
 function buscarPeliculas(){
-    console.log("http://www.omdbapi.com/?s="+tituloElegido+"&apikey=6f3b0414&page="+pagina);
-    $.getJSON("http://www.omdbapi.com/?s="+tituloElegido+"&apikey=6f3b0414&page="+pagina,function(respuesta){
+    console.log("https://www.omdbapi.com/?s="+tituloElegido+"&apikey=6f3b0414&page="+pagina);
+    $.getJSON("https://www.omdbapi.com/?s="+tituloElegido+"&apikey=6f3b0414&page="+pagina,function(respuesta){
             mostrarDatos(respuesta);
             scrollBloqueado = false;
     });
@@ -79,7 +79,7 @@ function mostrarDescripcion(datos){
 }
 
 function obtenerDescripcion(idPelicula){
-    $.getJSON("http://www.omdbapi.com/?i="+idPelicula+"&apikey=6f3b0414",(respuesta)=>{
+    $.getJSON("https://www.omdbapi.com/?i="+idPelicula+"&apikey=6f3b0414",(respuesta)=>{
         mostrarDescripcion(respuesta);
     });
 }
