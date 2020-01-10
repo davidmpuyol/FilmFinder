@@ -11,8 +11,10 @@
 }
 .modal-body{
     overflow-y:auto;
-    height:70vh;
 }
 .modal-dialog{
     overflow-y: initial!important;
+}
+#imagenPelicula img{
+    width:100%;
 }
