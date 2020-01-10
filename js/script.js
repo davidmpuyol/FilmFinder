@@ -25,7 +25,6 @@ $(document).ready(()=>{
     });
 });
 function buscarPeliculas(){
-    console.log("https://www.omdbapi.com/?s="+tituloElegido+"&apikey=6f3b0414&page="+pagina);
     $.getJSON("https://www.omdbapi.com/?s="+tituloElegido+"&apikey=6f3b0414&page="+pagina,function(respuesta){
             mostrarDatos(respuesta);
             scrollBloqueado = false;
