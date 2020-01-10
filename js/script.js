@@ -1,11 +1,13 @@
 var pagina = 1;
 var tituloElegido = "";
+var tipoElegido = "";
 var scrollBloqueado = false;
 $(document).ready(()=>{
     $("#bBuscar").click(()=>{
         primeravez = true;
         pagina = 1;
         tituloElegido = $('#textoBusqueda').val();
+        tipoElegido = $("input[name='tipo']:checked").val();
         $("#tarjetas .tarjeta").remove();
         buscarPeliculas();
     })
@@ -25,7 +27,7 @@ $(document).ready(()=>{
     });
 });
 function buscarPeliculas(){
-    $.getJSON("https://www.omdbapi.com/?s="+tituloElegido+"&apikey=6f3b0414&page="+pagina,function(respuesta){
+    $.getJSON("https://www.omdbapi.com/?s="+tituloElegido+"&type="+tipoElegido+"&apikey=6f3b0414&page="+pagina,function(respuesta){
             mostrarDatos(respuesta);
             scrollBloqueado = false;
     });
