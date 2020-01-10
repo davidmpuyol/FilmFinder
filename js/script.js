@@ -27,6 +27,7 @@ $(document).ready(()=>{
     });
 });
 function buscarPeliculas(){
+    console.log("https://www.omdbapi.com/?s="+tituloElegido+"&type="+tipoElegido+"&apikey=6f3b0414&page="+pagina);
     $.getJSON("https://www.omdbapi.com/?s="+tituloElegido+"&type="+tipoElegido+"&apikey=6f3b0414&page="+pagina,function(respuesta){
             mostrarDatos(respuesta);
             scrollBloqueado = false;
@@ -71,6 +72,11 @@ function mostrarDescripcion(datos){
     $("#imagenPelicula, #tituloPelicula, .list-group-item").empty();
     let imagen = $("<img>");
     $(imagen).attr("src",datos.Poster);
+    $("#duracion").append("<b>Duración: </b>"+datos.Runtime);
+    $("#genero").append("<b>Género: </b>"+datos.Genre);
+    $("#estreno").append("<b>Fecha de estreno: </b>"+datos.Released);
+    $("#pais").append("<b>País: </b>"+datos.Country);
+    $("#puntuacion").append("<b>Puntuación IMDB: </b>"+datos.imdbRating);
     $("#imagenPelicula").append(imagen);
     $("#tituloPelicula").append(datos.Title);
     $("#descripcionPelicula").append("<b>Descripcion: </b>"+datos.Plot);
