@@ -3,14 +3,16 @@
     height: 70%;
     object-fit: cover;
 }
-@media screen and (min-width: 600px){
-    .modal-lg{
-        max-width: 80%;
-    }
-}
 .tarjeta{
     cursor:pointer;
 }
 .checks{
     margin-left:20px;
+}
+.modal-body{
+    overflow-y:auto;
+    height:70vh;
+}
+.modal-dialog{
+    overflow-y: initial!important;
 }
