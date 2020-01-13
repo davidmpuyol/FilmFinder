@@ -3,6 +3,7 @@ var tituloElegido = "";
 var tipoElegido = "";
 var scrollBloqueado = false;
 $(document).ready(()=>{
+    $(".modal-dialog").draggable();
     $("#bBuscar").click(()=>{
         primeravez = true;
         pagina = 1;
@@ -26,13 +27,16 @@ $(document).ready(()=>{
         }
     });
 });
+
 function buscarPeliculas(){
-    console.log("https://www.omdbapi.com/?s="+tituloElegido+"&type="+tipoElegido+"&apikey=6f3b0414&page="+pagina);
+    $("#pre-loader").attr("style","");
     $.getJSON("https://www.omdbapi.com/?s="+tituloElegido+"&type="+tipoElegido+"&apikey=6f3b0414&page="+pagina,function(respuesta){
             mostrarDatos(respuesta);
             scrollBloqueado = false;
+            $("#pre-loader").attr("style","display:none");
     });
 }
+
 function mostrarDatos(datos){
     $.each(datos.Search,function(indice,elemento){
         crearTarjeta(elemento);
@@ -40,7 +44,7 @@ function mostrarDatos(datos){
 }
 function crearTarjeta(elemento){
     let tarjeta = $("<div>");
-    $(tarjeta).attr("class","tarjeta col-md-3 col-xl-2 col-sm-6 col-10");
+    $(tarjeta).attr("class","tarjeta col-md-3 col-xl-2 col-sm-6 offset-1 offset-md-0");
     tarjeta.idPelicula = elemento.imdbID;
     $(tarjeta).click(()=>{
         obtenerDescripcion(tarjeta.idPelicula);

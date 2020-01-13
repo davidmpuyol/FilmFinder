@@ -6,8 +6,8 @@
 .tarjeta{
     cursor:pointer;
 }
-.checks{
-    margin-left:20px;
+.check{
+    margin-left:20px!important;
 }
 .modal-body{
     overflow-y:auto;
@@ -17,4 +17,10 @@
 }
 #imagenPelicula img{
     width:100%;
+}
+.footer-copyright{
+    margin-right:20px;
+}
+.footer-copyright a{
+    color:rgb(83, 190, 209);
 }

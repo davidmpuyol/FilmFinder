@@ -15,7 +15,7 @@
     <script src="./js/script.js"></script>
   </head>
   <body>
-    <div id="container" class="container-fluid">
+    <div id="container" class="container">
         <div class="row cabecera">
             <nav class="navbar navbar-expand-sm navbar-light bg-light">
                 <a class="navbar-brand" href="#">Buscador de Películas</a>
@@ -29,15 +29,24 @@
                     <div class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" id="textoBusqueda" type="text" placeholder="Película" required>
                         <button class="btn btn-outline-secondary my-2 my-sm-0" id="bBuscar">Buscar</button>
-                        <label class="form-check-label checks">
-                            <input class="form-check-input" type="radio" name="tipo" id="" value="movie" checked>Peliculas
-                            <input class="form-check-input" type="radio" name="tipo" id="" value="series">Series 
+                        <label class="form-check-label">
+                            <input class="form-check-input check" type="radio" name="tipo" id="" value="movie" checked>Peliculas
+                            <input class="form-check-input check" type="radio" name="tipo" id="" value="series">Series 
                         </label>
                     </div>
                 </div>
             </nav>
+            <div class="footer-copyright ml-auto py-3">Made by <b>David Medina</b>:
+                <a href="https://github.com/davidmpuyol" target="_blank"> Github Page</a>
+            </div>
         </div>
-        <div class="row" id="tarjetas">
+        <div class="row" id="tarjetas"></div>
+        <div class="row" id="pre-loader" style="display:none">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
         </div>
         <div class="modal" id="divDescripcion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg dialog-scrollable" role="document">
